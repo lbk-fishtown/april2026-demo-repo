@@ -1,1 +1,0 @@
-{{ test_unique(column_name="nation_key", model=get_where_subquery(ref('stg_tpch_nations'))) }}

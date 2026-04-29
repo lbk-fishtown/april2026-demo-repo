@@ -1,1 +1,0 @@
-{{ test_unique(column_name="customer_key", model=get_where_subquery(ref('materialization_incremental'))) }}

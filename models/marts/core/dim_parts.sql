@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized = "view"
-  )
-}}
-
 with part as (
 
     select * from {{ref('stg_tpch_parts')}}
@@ -13,6 +7,10 @@ with part as (
 final as (
     select 
         part_key,
+        {{ dbt_utils.generate_surrogate_key([
+            'manufacturer',
+            'brand'
+        ]) }} as manufacturer_brand_key,
         manufacturer,
         name,
         brand,

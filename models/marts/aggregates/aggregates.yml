@@ -8,11 +8,11 @@ models:
       - name: order_year
         description: year of the order
 
-#  - name: agg_ship_modes_dynamic_pivot
-#    description: Example of creating a pivot table with hard-coded columns based on a query of the ship modes that are in the system
-#    columns:
-#      - name: order_year
-#        description: year of the order
+  - name: agg_ship_modes_dynamic_pivot
+    description: Example of creating a pivot table with hard-coded columns based on a query of the ship modes that are in the system
+    columns:
+      - name: order_year
+        description: year of the order
       
   - name: monthly_gross_revenue
     columns:
@@ -67,13 +67,13 @@ exposures:
       name: Business Operations Team 
       email: bizops@dbtlabs.com
 
-#  - name: yearly_part_rollup
-#    description: Rollup of orders
-#    type: dashboard 
-#    url: https://example.com
-#    maturity: high
-#    owner:
-#      name: DBT User Bob
-#      email: dbtuserbob@getdbt.com
-#    depends_on:
-#        - ref('agg_ship_modes_dynamic_pivot')
+  - name: yearly_part_rollup
+    description: Rollup of orders
+    type: dashboard 
+    url: https://example.com
+    maturity: high
+    owner:
+      name: DBT User Bob
+      email: dbtuserbob@getdbt.com
+    depends_on:
+        - ref('agg_ship_modes_dynamic_pivot')

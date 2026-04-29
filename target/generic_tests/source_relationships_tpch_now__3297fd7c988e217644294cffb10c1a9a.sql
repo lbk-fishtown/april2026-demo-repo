@@ -1,1 +1,0 @@
-{{ test_relationships(column_name="l_orderkey", field="o_orderkey", model=get_where_subquery(source('tpch_now', 'lineitem')), to=source('tpch_now', 'orders')) }}

@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="customer_key", model=get_where_subquery(ref('dim_customers', v='2'))) }}

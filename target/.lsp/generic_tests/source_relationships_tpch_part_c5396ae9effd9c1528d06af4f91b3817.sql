@@ -1,1 +1,0 @@
-{{ test_relationships(column_name="ps_suppkey", field="s_suppkey", model=get_where_subquery(source('tpch', 'partsupp')), to=source('tpch', 'supplier')) }}
