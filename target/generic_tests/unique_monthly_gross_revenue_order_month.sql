@@ -1,1 +1,0 @@
-{{ test_unique(column_name="order_month", model=get_where_subquery(ref('monthly_gross_revenue'))) }}

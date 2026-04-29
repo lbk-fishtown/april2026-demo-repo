@@ -1,1 +1,0 @@
-{{ test_unique(column_name="part_key", model=get_where_subquery(ref('dim_parts'))) }}

@@ -1,1 +1,0 @@
-{{ test_unique(column_name="o_orderkey", model=get_where_subquery(source('tpch_now', 'orders'))) }}
