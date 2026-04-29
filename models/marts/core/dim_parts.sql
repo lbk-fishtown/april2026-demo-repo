@@ -1,11 +1,3 @@
-{{
-  config(
-    materialized = "table",
-    table_format="iceberg",
-    external_volume="ICEBERGEXVOL",
-  )
-}}
-
 with part as (
 
     select * from {{ref('stg_tpch_parts')}}

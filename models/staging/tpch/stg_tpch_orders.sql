@@ -1,27 +1,23 @@
-
 with source as (
 
-    select * from {{ source('tpch_now', 'orders') }}
+    select * from {{ source('tpch', 'orders') }}
 
 ),
 
-rename as (
+final as (
 
     select
-    
         o_orderkey as order_key,
-        o_custkey::text as customer_key,
+        o_custkey as customer_key,
         o_orderstatus as status_code,
         o_totalprice as total_price,
         o_orderdate as order_date,
-        o_ordertime as order_time,
         o_orderpriority as priority_code,
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
         o_comment as comment
-
     from source
 
 )
 
-select * from rename
+select * from final
