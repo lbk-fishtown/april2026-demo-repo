@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="part_supplier_key", model=get_where_subquery(ref('fct_tpch_parts'))) }}

@@ -1,0 +1,109 @@
+==================== 2026-03-25T02:37:36.883815Z | ba0f371a-3ea2-44d6-99f3-3b3cd538b884 ====================
+02:37:36.884029 [info ]: Starting dbt LSP server
+02:37:36.884114 [info ]: Connecting to LSP client on port 58078
+02:37:36.884364 [info ]: Successfully connected to LSP client
+02:37:36.884374 [info ]: Creating LSP service...
+02:37:36.916076 [info ]: Creating LSP server...
+02:37:36.916085 [info ]: Starting LSP server...
+==================== 2026-03-25T23:01:14.611507Z | 06753a16-3e77-427c-b035-a7c6064ebba4 ====================
+23:01:14.612834 [info ]: Starting dbt LSP server
+23:01:14.612903 [info ]: Connecting to LSP client on port 8000
+23:01:14.613589 [info ]: Successfully connected to LSP client
+23:01:14.613609 [info ]: Creating LSP service...
+23:01:14.706439 [info ]: Creating LSP server...
+23:01:14.706460 [info ]: Starting LSP server...
+23:01:15.401779 [info ]: Started loading project
+23:01:15.408653 [info ]: Loading ~/.dbt/profiles.yml
+23:01:15.641892 [info ]:    Started resolving packages from packages.yml
+23:01:16.953440 [info ]: Loading ~/.dbt/profiles.yml
+23:01:17.842496 [warn ]: dbt1065: Package 'dbt_expectations' has been moved to 'metaplane/dbt_expectations'. Please update your package reference.
+23:01:17.842701 [warn ]: dbt1065: Package 'dbt_expectations' requires dbt version [>=1.2.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.066510 [warn ]: dbt1065: Package 'dbt_utils' requires dbt version [>=1.3.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.277897 [warn ]: dbt1065: Package 'codegen' requires dbt version [>=1.0.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.494129 [warn ]: dbt1065: Package 'dbt_external_tables' requires dbt version [>=1.0.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.724355 [warn ]: dbt1065: Package 'audit_helper' requires dbt version [>=1.2.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.943714 [warn ]: dbt1065: Package 'dbt_date' has been moved to 'godatadriven/dbt_date'. Please update your package reference.
+23:01:18.943755 [warn ]: dbt1065: Package 'dbt_date' requires dbt version [>=1.2.0, <2.0.0], but current version is 2.0.0-preview.126. This package may not be compatible with your dbt version.
+23:01:18.945860 [info ]:   Finished [  3.30s] resolving packages from packages.yml (6 items)
+23:01:18.946166 [debug]:    Started loading packages
+23:01:19.021695 [debug]:     Loaded [  0.08s] packages
+23:01:19.022709 [info ]: Finished loading project [  3.62s]
+23:01:19.023311 [info ]: Started parsing
+23:01:19.100468 [debug]: Finished parsing models/staging/movie_reviews/stg_movie_reviews.yml [  0.00s]
+23:01:19.103249 [debug]: Finished parsing models/staging/tpch/tpch_sources.yml [  0.00s]
+23:01:19.105626 [debug]: Finished parsing macros/macro.yml [  0.00s]
+23:01:19.118209 [warn ]: dbt1005: Unused schema.yml entry for model 'stg_movie_reviews'
+  --> models/staging/movie_reviews/stg_movie_reviews.yml
+23:01:19.119558 [debug]: Finished parsing target/generic_tests/source_not_null_movie_reviews_raw_movie_reviews_id.sql [  0.00s]
+23:01:19.119991 [debug]: Finished parsing target/generic_tests/source_unique_movie_reviews_raw_movie_reviews_id.sql [  0.00s]
+23:01:19.120222 [debug]: Finished parsing target/generic_tests/source_not_null_movie_reviews_raw_movie_reviews_movie_id.sql [  0.00s]
+23:01:19.120425 [debug]: Finished parsing target/generic_tests/source_not_null_movie_reviews_raw_movie_reviews_review_text.sql [  0.00s]
+23:01:19.120632 [debug]: Finished parsing target/generic_tests/source_not_null_movie_reviews_raw_movie_reviews_sentiment_value.sql [  0.00s]
+23:01:19.121010 [debug]: Finished parsing target/generic_tests/source_accepted_values_movie_r_8dbef68b603cb42bd71a31ea793c0ebb.sql [  0.00s]
+23:01:19.121236 [debug]: Finished parsing target/generic_tests/source_unique_tpch_customer_c_custkey.sql [  0.00s]
+23:01:19.121467 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_customer_c_custkey.sql [  0.00s]
+23:01:19.121681 [debug]: Finished parsing target/generic_tests/source_unique_tpch_nation_n_nationkey.sql [  0.00s]
+23:01:19.121908 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_nation_n_nationkey.sql [  0.00s]
+23:01:19.122105 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_nati_863138f31f617783ad556b879ab65039.sql [  0.00s]
+23:01:19.122318 [debug]: Finished parsing target/generic_tests/source_unique_tpch_part_p_partkey.sql [  0.00s]
+23:01:19.122548 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_part_p_partkey.sql [  0.00s]
+23:01:19.122791 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_part_a4c1d3c0d0f0db1ff9c10bf48b8c8fe8.sql [  0.00s]
+23:01:19.123000 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_part_c5396ae9effd9c1528d06af4f91b3817.sql [  0.00s]
+23:01:19.123238 [debug]: Finished parsing target/generic_tests/source_unique_tpch_region_r_regionkey.sql [  0.00s]
+23:01:19.123545 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_region_r_regionkey.sql [  0.00s]
+23:01:19.123759 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_supp_1c9d96c407a8f937b03dcfc97848e71b.sql [  0.00s]
+23:01:19.123995 [debug]: Finished parsing target/generic_tests/source_unique_tpch_supplier_s_suppkey.sql [  0.00s]
+23:01:19.124224 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_supplier_s_suppkey.sql [  0.00s]
+23:01:19.124427 [debug]: Finished parsing target/generic_tests/source_accepted_values_tpch_now_lineitem_l_linestatus__P__F__O.sql [  0.00s]
+23:01:19.124629 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_now__3297fd7c988e217644294cffb10c1a9a.sql [  0.00s]
+23:01:19.124829 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_now__d7a6447ead2c674fcfe3a96ae387a1a2.sql [  0.00s]
+23:01:19.125054 [debug]: Finished parsing target/generic_tests/source_accepted_values_tpch_now_lineitem_l_returnflag__R__A.sql [  0.00s]
+23:01:19.125239 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_now__75c491b61c5c1339e1256fe669ce5e40.sql [  0.00s]
+23:01:19.125422 [debug]: Finished parsing target/generic_tests/source_relationships_tpch_now__04d160feb4b2990f77979b0d0b21d643.sql [  0.00s]
+23:01:19.125597 [debug]: Finished parsing target/generic_tests/source_unique_tpch_now_orders_o_orderkey.sql [  0.00s]
+23:01:19.130133 [debug]: Finished parsing target/generic_tests/source_not_null_tpch_now_orders_o_orderkey.sql [  0.00s]
+23:01:19.132315 [info ]: Finished parsing [  0.11s]
+23:01:19.132703 [info ]: Cached model count updated: 0 models (estimate)
+23:01:19.132713 [info ]: Cached model count updated: 0 models (accurate)
+23:01:19.132902 [info ]: Started scheduling
+23:01:19.133234 [info ]: Finished scheduling [  0.00s]
+23:01:19.133272 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+23:01:19.133292 [info ]: Started scheduling
+23:01:19.133340 [info ]: Finished scheduling [  0.00s]
+23:01:19.134376 [info ]: Started deferring state
+23:01:19.134393 [info ]: Finished deferring state [  0.00s]
+23:01:19.137115 [info ]: Started downloading schemas
+23:01:19.137191 [debug]:    Started downloading relations
+23:01:19.137343 [debug]:   Finished [  0.00s] downloading relations
+23:01:19.137374 [info ]: Finished downloading schemas [  0.00s]
+23:01:19.304340 [info ]: Started building task graph
+23:01:19.304556 [info ]: Finished building task graph [  0.00s]
+23:01:19.310029 [info ]: Cached model count updated: 0 models (accurate)
+==================== 2026-04-23T02:52:10.784517Z | 3cfc272b-aa5c-41ef-a4e0-3ee9557e4543 ====================
+02:52:10.784746 [info ]: Starting dbt LSP server
+02:52:10.784854 [info ]: Connecting to LSP client on port 57721
+02:52:10.785049 [info ]: Successfully connected to LSP client
+02:52:10.785061 [info ]: Creating LSP service...
+02:52:10.823272 [info ]: Creating LSP server...
+02:52:10.823280 [info ]: Starting LSP server...
+==================== 2026-04-23T03:22:02.120658Z | 94304d15-3011-45d4-a6f5-ee743caf08c6 ====================
+03:22:02.120892 [info ]: Starting dbt LSP server
+03:22:02.121003 [info ]: Connecting to LSP client on port 59180
+03:22:02.121173 [info ]: Successfully connected to LSP client
+03:22:02.121185 [info ]: Creating LSP service...
+03:22:02.158811 [info ]: Creating LSP server...
+03:22:02.158826 [info ]: Starting LSP server...
+==================== 2026-04-23T06:40:54.912098Z | 131dfa22-2567-4e51-aa19-21502092658f ====================
+06:40:54.912335 [info ]: Starting dbt LSP server
+06:40:54.912442 [info ]: Connecting to LSP client on port 49994
+06:40:54.912660 [info ]: Successfully connected to LSP client
+06:40:54.912666 [info ]: Creating LSP service...
+06:40:54.950691 [info ]: Creating LSP server...
+06:40:54.950698 [info ]: Starting LSP server...
+==================== 2026-04-23T06:41:29.300282Z | b4295144-ac25-46eb-aa5b-339876a699f2 ====================
+06:41:29.300323 [info ]: Starting dbt LSP server
+06:41:29.300346 [info ]: Connecting to LSP client on port 50036
+06:41:29.300498 [info ]: Successfully connected to LSP client
+06:41:29.300516 [info ]: Creating LSP service...
+06:41:29.330590 [info ]: Creating LSP server...
+06:41:29.330606 [info ]: Starting LSP server...

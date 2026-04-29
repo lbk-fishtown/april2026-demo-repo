@@ -1,0 +1,64 @@
+{
+  "columns": [
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "O_ORDERKEY",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "DATE",
+      "is_complex": false,
+      "name": "O_ORDERDATE",
+      "snowflake_type": "DATE"
+    },
+    {
+      "duckdb_type": "TIMESTAMP",
+      "is_complex": false,
+      "name": "O_ORDERTIME",
+      "snowflake_type": "TIMESTAMP_NTZ"
+    },
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "O_CUSTKEY",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(1)",
+      "is_complex": false,
+      "name": "O_ORDERSTATUS",
+      "snowflake_type": "VARCHAR(1)"
+    },
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "O_TOTALPRICE",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(15)",
+      "is_complex": false,
+      "name": "O_ORDERPRIORITY",
+      "snowflake_type": "VARCHAR(15)"
+    },
+    {
+      "duckdb_type": "VARCHAR(15)",
+      "is_complex": false,
+      "name": "O_CLERK",
+      "snowflake_type": "VARCHAR(15)"
+    },
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "O_SHIPPRIORITY",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(79)",
+      "is_complex": false,
+      "name": "O_COMMENT",
+      "snowflake_type": "VARCHAR(79)"
+    }
+  ]
+}

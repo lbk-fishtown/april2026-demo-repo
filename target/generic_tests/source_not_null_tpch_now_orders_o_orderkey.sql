@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="o_orderkey", model=get_where_subquery(source('tpch_now', 'orders'))) }}

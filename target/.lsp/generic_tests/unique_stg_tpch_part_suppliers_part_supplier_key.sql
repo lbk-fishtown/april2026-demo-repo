@@ -1,0 +1,1 @@
+{{ test_unique(column_name="part_supplier_key", model=get_where_subquery(ref('stg_tpch_part_suppliers'))) }}

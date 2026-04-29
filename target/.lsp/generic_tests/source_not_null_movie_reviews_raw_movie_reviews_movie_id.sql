@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="movie_id", model=get_where_subquery(source('movie_reviews', 'raw_movie_reviews'))) }}

@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="ps_partkey", field="p_partkey", model=get_where_subquery(source('tpch', 'partsupp')), to=source('tpch', 'part')) }}

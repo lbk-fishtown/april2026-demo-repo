@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="n_regionkey", field="r_regionkey", model=get_where_subquery(source('tpch', 'nation')), to=source('tpch', 'region')) }}

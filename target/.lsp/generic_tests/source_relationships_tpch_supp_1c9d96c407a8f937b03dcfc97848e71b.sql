@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="s_nationkey", field="n_nationkey", model=get_where_subquery(source('tpch', 'supplier')), to=source('tpch', 'nation')) }}

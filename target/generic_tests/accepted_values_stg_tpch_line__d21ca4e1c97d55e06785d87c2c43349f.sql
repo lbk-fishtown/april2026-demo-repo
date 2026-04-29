@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="status_code", model=get_where_subquery(ref('stg_tpch_line_items')), values=["returned","billed","shipped"]) }}

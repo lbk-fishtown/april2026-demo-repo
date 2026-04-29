@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="supplier_key", model=get_where_subquery(ref('stg_tpch_suppliers'))) }}

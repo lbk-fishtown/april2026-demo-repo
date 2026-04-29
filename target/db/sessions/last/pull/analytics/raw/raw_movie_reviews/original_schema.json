@@ -1,0 +1,34 @@
+{
+  "columns": [
+    {
+      "duckdb_type": "VARCHAR",
+      "is_complex": false,
+      "name": "REVIEW_TEXT",
+      "snowflake_type": "TEXT"
+    },
+    {
+      "duckdb_type": "BIGINT",
+      "is_complex": false,
+      "name": "SENTIMENT_VALUE",
+      "snowflake_type": "NUMBER"
+    },
+    {
+      "duckdb_type": "BIGINT",
+      "is_complex": false,
+      "name": "ID",
+      "snowflake_type": "NUMBER"
+    },
+    {
+      "duckdb_type": "BIGINT",
+      "is_complex": false,
+      "name": "MOVIE_ID",
+      "snowflake_type": "NUMBER"
+    },
+    {
+      "duckdb_type": "TIMESTAMP",
+      "is_complex": false,
+      "name": "RESPONSE_TIME",
+      "snowflake_type": "TIMESTAMP_NTZ"
+    }
+  ]
+}

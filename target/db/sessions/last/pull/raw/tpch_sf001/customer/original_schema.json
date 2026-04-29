@@ -1,0 +1,52 @@
+{
+  "columns": [
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "C_CUSTKEY",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(25)",
+      "is_complex": false,
+      "name": "C_NAME",
+      "snowflake_type": "VARCHAR(25)"
+    },
+    {
+      "duckdb_type": "VARCHAR(40)",
+      "is_complex": false,
+      "name": "C_ADDRESS",
+      "snowflake_type": "VARCHAR(40)"
+    },
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "C_NATIONKEY",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(15)",
+      "is_complex": false,
+      "name": "C_PHONE",
+      "snowflake_type": "VARCHAR(15)"
+    },
+    {
+      "duckdb_type": "DECIMAL(38,0)",
+      "is_complex": false,
+      "name": "C_ACCTBAL",
+      "snowflake_type": "NUMBER(38,0)"
+    },
+    {
+      "duckdb_type": "VARCHAR(10)",
+      "is_complex": false,
+      "name": "C_MKTSEGMENT",
+      "snowflake_type": "VARCHAR(10)"
+    },
+    {
+      "duckdb_type": "VARCHAR(117)",
+      "is_complex": false,
+      "name": "C_COMMENT",
+      "snowflake_type": "VARCHAR(117)"
+    }
+  ]
+}

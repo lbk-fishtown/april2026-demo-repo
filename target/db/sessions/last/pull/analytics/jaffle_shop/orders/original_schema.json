@@ -1,0 +1,40 @@
+{
+  "columns": [
+    {
+      "duckdb_type": "JSON",
+      "is_complex": true,
+      "name": "VALUE",
+      "snowflake_type": "VARIANT"
+    },
+    {
+      "duckdb_type": "VARCHAR",
+      "is_complex": false,
+      "name": "SOURCE_FILE_NAME",
+      "snowflake_type": "TEXT"
+    },
+    {
+      "duckdb_type": "BIGINT",
+      "is_complex": false,
+      "name": "ID",
+      "snowflake_type": "NUMBER"
+    },
+    {
+      "duckdb_type": "BIGINT",
+      "is_complex": false,
+      "name": "USER_ID",
+      "snowflake_type": "NUMBER"
+    },
+    {
+      "duckdb_type": "DATE",
+      "is_complex": false,
+      "name": "ORDER_DATE",
+      "snowflake_type": "DATE"
+    },
+    {
+      "duckdb_type": "VARCHAR",
+      "is_complex": false,
+      "name": "STATUS",
+      "snowflake_type": "TEXT"
+    }
+  ]
+}

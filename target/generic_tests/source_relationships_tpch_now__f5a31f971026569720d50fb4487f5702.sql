@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="o_custkey", field="c_custkey", model=get_where_subquery(source('tpch_now', 'orders')), to=source('tpch_sf001', 'customer')) }}

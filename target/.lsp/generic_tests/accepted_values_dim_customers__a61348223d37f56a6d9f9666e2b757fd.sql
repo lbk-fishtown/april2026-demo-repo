@@ -1,0 +1,2 @@
+{{ config({"severity":"Warn","tags":[]}) }}
+{{ test_accepted_values(column_name="region", model=get_where_subquery(ref('dim_customers', v='1')), values=["AFRICA","MIDDLE EAST","ASIA","EUROPE","AMERICA"]) }}

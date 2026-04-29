@@ -1,0 +1,1 @@
+{{ dbt_expectations.test_expect_table_aggregation_to_equal_other_table(compare_expression="sum(net_item_sales_amount)", compare_model=ref("fct_orders"), expression="sum(net_item_sales_amount)", group_by=["order_key"], model=get_where_subquery(ref('fct_order_items'))) }}

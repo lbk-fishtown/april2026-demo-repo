@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="region_key", model=get_where_subquery(ref('stg_tpch_regions'))) }}
