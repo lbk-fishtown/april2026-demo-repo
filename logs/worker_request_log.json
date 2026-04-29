@@ -1,0 +1,12 @@
+{"type":"task","task_id":"sidecar_exec::9baf3ee9-a9f1-4d71-889c-8975a939a0ff","payload":{"kind":"query","sql":"DESCRIBE analytics.dbt_lbk_fusion_mig.dim_parts","limit":null},"deps":[],"uses":[]}
+
+{"type":"task","task_id":"sidecar_exec::08707995-afa9-4015-8143-225f5c164a37","payload":{"kind":"query","sql":"DESCRIBE analytics.dbt_lbk_fusion_mig.stg_tpch_parts","limit":null},"deps":[],"uses":[]}
+
+{"type":"task","task_id":"sidecar_exec::bc0f2480-feb6-4828-b9b6-a9ec32c78211","payload":{"kind":"query","sql":"DESCRIBE raw.tpch_sf001.part","limit":null},"deps":[],"uses":[]}
+
+{"type":"task","task_id":"check_exists::source.analytics.tpch_sf001.part::e690b9ed-a7f8-4668-8c61-b5ad8aa0f609","payload":{"kind":"query","sql":"SELECT 1 FROM information_schema.tables WHERE table_catalog = 'raw' AND table_schema = 'tpch_sf001' AND table_name = 'part' LIMIT 1","limit":1},"deps":[],"uses":[{"catalog":"RAW","schema":"TPCH_SF001","name":"PART"}]}
+
+{"type":"task","task_id":"adhoc::model.analytics.stg_tpch_parts::c7930e94-0808-4569-a1f7-0a05905fe36d","payload":{"kind":"query","sql":"select * from ANALYTICS.DBT_LBK_FUSION_MIG.STG_TPCH_PARTS","limit":10},"deps":[],"uses":[{"catalog":"ANALYTICS","schema":"DBT_LBK_FUSION_MIG","name":"STG_TPCH_PARTS"},{"catalog":"RAW","schema":"TPCH_SF001","name":"PART"}]}
+
+{"type":"task","task_id":"adhoc::model.analytics.dim_parts::f7dd5f16-6e67-4298-8060-ad6c4ef6836d","payload":{"kind":"query","sql":"select * from ANALYTICS.DBT_LBK_FUSION_MIG.DIM_PARTS","limit":10},"deps":[],"uses":[{"catalog":"ANALYTICS","schema":"DBT_LBK_FUSION_MIG","name":"DIM_PARTS"},{"catalog":"ANALYTICS","schema":"DBT_LBK_FUSION_MIG","name":"STG_TPCH_PARTS"}]}
+

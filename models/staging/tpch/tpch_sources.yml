@@ -2,7 +2,7 @@ version: 2
 
 
 sources:
-  - name: tpch_sf001
+  - name: tpch
     description: Welcome to the dbt Labs demo dbt project! We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
     database: raw
     schema: tpch_sf001
@@ -53,7 +53,7 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'region')
+                    to: source('tpch', 'region')
                     field: r_regionkey
           - name: n_comment
             description: '{{ doc("comment") }}'
@@ -95,14 +95,14 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'part')
+                    to: source('tpch', 'part')
                     field: p_partkey
           - name: ps_suppkey
             description: Foreign Key to S_SUPPKEY
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'supplier')
+                    to: source('tpch', 'supplier')
                     field: s_suppkey
           - name: ps_availqty
             description: raw available quantity
@@ -149,7 +149,7 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'nation')
+                    to: source('tpch', 'nation')
                     field: n_nationkey
           - name: s_phone
             description: phone number of the supplier
@@ -181,7 +181,7 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'customer')
+                    to: source('tpch', 'customer')
                     field: c_custkey
           - name: o_orderstatus
             description: status code of the order
@@ -214,14 +214,14 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'part')
+                    to: source('tpch', 'part')
                     field: p_partkey
           - name: l_suppkey
             description: Foreign key to S_SUPPKEY, second part of the compound Foreign Key to (PS_PARTKEY, PS_SUPPKEY) with L_PARTKEY
             data_tests:
               - relationships:
                   arguments:
-                    to: source('tpch_sf001', 'supplier')
+                    to: source('tpch', 'supplier')
                     field: s_suppkey
           - name: l_linenumber
             description: sequence of the order items within the order

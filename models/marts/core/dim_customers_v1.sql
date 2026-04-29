@@ -13,42 +13,42 @@ with customer as (
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
+
 ),
 region as (
 
     select * from {{ ref('stg_tpch_regions') }}
 
 ),
-customer_flags as (
-    select * from {{ ref('customer_flags') }}
-),
+customer_tier as (
+  
+    select * from {{ ref('customer_tier') }}
 
+),
 final as (
     select 
         customer.customer_key,
         customer.name,
+        customer.name_prefix,
+        customer.name_id,
         customer.address,
-        --- Break the contract 
-        -- nation.nation_key as nation_key, 
+        {# nation.nation_key as nation_key, #}
         nation.name as nation,
-        --- Break the contract again
-        -- region.region_key as region_key,
+        {# region.region_key as region_key, #}
         region.name as region,
         customer.phone_number,
         customer.account_balance,
         customer.market_segment,
-        customer_flags.lifetime_value,
-        customer_flags.is_high_value,
-        customer_flags.is_mid_value,
-        customer_flags.is_low_value
+        customer_tier.lifetime_value,
+        customer_tier.tier_name
     from
         customer
         inner join nation
             on customer.nation_key = nation.nation_key
         inner join region
             on nation.region_key = region.region_key
-        left join customer_flags
-            on customer.customer_key = customer_flags.customer_key
+        left join customer_tier
+            on customer.customer_key = customer_tier.customer_key
 )
 select 
     *

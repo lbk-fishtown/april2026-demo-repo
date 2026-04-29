@@ -18,10 +18,12 @@ models:
       - name: customer_key
         data_type: int
         description: Primary key on the customers table
+        data_tests:
+          - unique
+          - not_null
       - name: region
         data_type: varchar(25)
         description: region name
-
         data_tests:
           - accepted_values:
               config:
@@ -31,6 +33,12 @@ models:
       - name: name
         data_type: varchar(25)
         description: customer id
+      - name: name_prefix
+        data_type: varchar(25)
+        description: portion of the customer name before the # delimiter
+      - name: name_id
+        data_type: varchar(25)
+        description: portion of the customer name after the # delimiter
       - name: address
         data_type: varchar(40)
         description: address of the customer
@@ -49,9 +57,9 @@ models:
       - name: lifetime_value
         data_type: int
         description: lifetime value for the customer
-     # - name: tier_name
-     #   data_type: string
-     #   description: tier of the customer
+      - name: tier_name
+        data_type: string
+        description: tier of the customer
       - name: is_high_value
         data_type: varchar(1)
         description: high revenue account
@@ -61,19 +69,6 @@ models:
       - name: is_low_value
         data_type: varchar(1)
         description: low revenue account
-    # Removing Versions as this might cause issues with FS
-    #versions:
-    #  - v: 1
-    #    columns:
-    #      - include: all
-    #        exclude: [is_high_value, is_mid_value, is_low_value]
-    #    deprecation_date: 2024-08-31 00:00:00+00:00
-    #  - v: 2
-    #    columns:
-    #      - include: all
-    #        exclude: [tier_name]
-    #latest_version: 2
-
     versions:
       - v: 1
         columns:
@@ -93,6 +88,10 @@ models:
         description: primary key of the model
         data_tests:
           - unique
+          - not_null
+      - name: manufacturer_brand_key
+        description: surrogate key generated from manufacturer and brand
+        data_tests:
           - not_null
       - name: manufacturer
         description: manufacturer of the part
@@ -187,6 +186,8 @@ models:
         description: count of order items
       - name: quantity
         description: total units
+      - name: unit_price
+        description: net item sales amount per unit, calculated as net_item_sales_amount divided by quantity
       - name: gross_item_sales_amount
         description: '{{ doc("gross_item_sales_amount") }}'
       - name: discounted_item_sales_amount
@@ -200,6 +201,31 @@ models:
     config:
       group: data_team
       access: public
+  - name: fct_order_items_monthly
+    description: Monthly sales summary derived from `fct_order_items` (one row per `order_month`).
+    columns:
+      - name: order_month
+        description: Month of the order (date-truncated to month).
+        data_tests:
+          - not_null
+          - unique
+      - name: order_count
+        description: Distinct number of orders in the month.
+      - name: order_item_count
+        description: Number of order items in the month.
+      - name: quantity
+        description: Units sold in the month.
+      - name: gross_item_sales_amount
+        description: Sum of gross item sales amount in the month.
+      - name: discounted_item_sales_amount
+        description: Sum of discounted item sales amount in the month.
+      - name: item_discount_amount
+        description: Sum of item discount amount in the month.
+      - name: item_tax_amount
+        description: Sum of item tax amount in the month.
+      - name: net_item_sales_amount
+        description: Sum of net item sales amount in the month.
+
   - name: fct_orders
     description: orders fact table
     columns:
@@ -210,7 +236,6 @@ models:
           - not_null
       - name: customer_key
         description: foreign key for customers
-
         data_tests:
           - relationships:
               config:
@@ -218,7 +243,6 @@ models:
               arguments:
                 to: ref('dim_customers')
                 field: customer_key
-
       - name: order_date
         description: date of the order
       - name: status_code
@@ -241,3 +265,41 @@ models:
         description: '{{ doc("item_tax_amount") }}'
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
+
+
+  - name: fct_orders_by_status
+    description: Revenue and tax summarized to the order status grain (one row per status_code).
+    columns:
+
+      - name: status_code
+        description: Order status code.
+        data_tests:
+          - not_null
+          - unique
+      - name: order_count
+        description: Total number of orders with this status.
+      - name: return_count
+        description: Total number of returned line items across orders with this status.
+      - name: gross_item_sales_amount
+        description: '{{ doc("gross_item_sales_amount") }}'
+      - name: net_item_sales_amount
+        description: '{{ doc("net_item_sales_amount") }}'
+      - name: item_tax_amount
+        description: '{{ doc("item_tax_amount") }}'
+
+  - name: fct_tpch_parts
+    description: Supplier x part mapping fact table (ported from `analyses/sproc_example.sql`).
+    columns:
+      - name: part_supplier_key
+        description: Surrogate key for the part-supplier grain.
+        data_tests:
+          - unique
+          - not_null
+      - name: supplier_key
+        description: Supplier key.
+        data_tests:
+          - not_null
+      - name: part_key
+        description: Part key.
+      - name: part_material
+        description: Material derived from part type (BRASS normalized; steel rows removed).

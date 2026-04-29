@@ -1,6 +1,8 @@
 {{
   config(
-    materialized = "view"
+    materialized = "table",
+    table_format="iceberg",
+    external_volume="ICEBERGEXVOL",
   )
 }}
 
@@ -13,6 +15,10 @@ with part as (
 final as (
     select 
         part_key,
+        {{ dbt_utils.generate_surrogate_key([
+            'manufacturer',
+            'brand'
+        ]) }} as manufacturer_brand_key,
         manufacturer,
         name,
         brand,

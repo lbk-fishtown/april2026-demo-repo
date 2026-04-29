@@ -10,7 +10,11 @@ models:
           - unique
           - not_null
       - name: name
-        description: customer id
+        description: raw customer name value from the source
+      - name: name_prefix
+        description: portion of the raw customer name before the # delimiter
+      - name: name_id
+        description: portion of the raw customer name after the # delimiter
       - name: address
         description: address of the customer
       - name: nation_key

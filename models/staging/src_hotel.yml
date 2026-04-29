@@ -1,0 +1,8 @@
+
+
+sources:
+  - name: hotel
+    schema: au_dbt_lbk
+    database: analytics
+    tables:
+      - name: hotel_stays

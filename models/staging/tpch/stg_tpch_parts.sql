@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('tpch_sf001', 'part') }}
+    select * from {{ source('tpch', 'part') }}
 
 ),
 
@@ -16,7 +16,8 @@ renamed as (
         p_size as size,
         p_container as container,
         p_retailprice as retail_price,
-        p_comment as comment
+        p_comment as comment,
+        1 as record_count
 
     from source
 

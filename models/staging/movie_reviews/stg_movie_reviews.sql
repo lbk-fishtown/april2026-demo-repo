@@ -7,7 +7,6 @@ source as (
 ),
 
 renamed as (
-
     select
         id as movie_review_id,
         movie_id,

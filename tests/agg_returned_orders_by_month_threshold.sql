@@ -1,7 +1,7 @@
 {{
     config(
         enabled=true,
-        severity='warn',
+        severity='error',
     )
 }}
 
